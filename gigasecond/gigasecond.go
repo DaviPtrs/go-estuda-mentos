@@ -14,7 +14,5 @@ const Gigasecond int64 = 1000000000
 
 // AddGigasecond should have a comment documenting it.
 func AddGigasecond(t time.Time) time.Time {
-	t_seconds := t.Unix()
-	t_giga := t_seconds + Gigasecond
-	return time.Unix(t_giga, 0)
+	return t.Add(time.Duration(Gigasecond) * time.Second)
 }
