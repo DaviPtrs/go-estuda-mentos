@@ -6,13 +6,15 @@
 package gigasecond
 
 // import path for the time package from the standard library
-import "time"
+import (
+	"time"
+)
+
+const Gigasecond int64 = 1000000000
 
 // AddGigasecond should have a comment documenting it.
 func AddGigasecond(t time.Time) time.Time {
-	// Write some code here to pass the test suite.
-	// Then remove all the stock comments.
-	// They're here to help you get started but they only clutter a finished solution.
-	// If you leave them in, reviewers may protest!
-	return t
+	t_seconds := t.Unix()
+	t_giga := t_seconds + Gigasecond
+	return time.Unix(t_giga, 0)
 }
