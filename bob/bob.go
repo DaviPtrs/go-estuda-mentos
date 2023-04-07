@@ -32,14 +32,14 @@ func isSilence(input string) bool {
 }
 
 func Hey(remark string) string {
-	trimmed := strings.TrimSpace(remark)
-	is_question := isQuestion(trimmed)
+	remark = strings.TrimSpace(remark)
+	is_question := isQuestion(remark)
 
-	if isSilence(trimmed) {
+	if isSilence(remark) {
 		return "Fine. Be that way!"
 	}
 
-	if checkAllCapital(trimmed) {
+	if checkAllCapital(remark) {
 		if is_question {
 			return "Calm down, I know what I'm doing!"
 		}
