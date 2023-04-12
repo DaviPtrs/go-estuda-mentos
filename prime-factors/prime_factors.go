@@ -11,7 +11,7 @@ func Factors(n int64) []int64 {
 		limit = n
 	}
 	primes := []int64{}
-	for c := int64(2); c <= limit; c++ {
+	for c := int64(2); c < limit; c++ {
 		if rest <= 1 {
 			break
 		}
