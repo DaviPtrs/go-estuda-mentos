@@ -1,24 +1,15 @@
 package prime
 
-import (
-	"math"
-)
-
 func Factors(n int64) []int64 {
 	rest := n
-	limit := int64(math.Sqrt(float64(n)))
-	if limit < n {
-		limit = n
-	}
 	primes := []int64{}
-	for c := int64(2); c <= limit; c++ {
-		if rest <= 1 {
-			break
-		}
+	c := int64(2)
+	for rest > 1 {
 		if rest%c == 0 {
 			rest /= c
 			primes = append(primes, c)
-			c--
+		} else {
+			c++
 		}
 	}
 	return primes
