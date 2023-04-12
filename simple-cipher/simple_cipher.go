@@ -52,7 +52,7 @@ func shiftStringFromArr(input string, distances []int, factor int) string {
 	ciphered := []rune{}
 	input = clearString(input)
 	for i, char := range input {
-		distance := (distances[i%len(distances)]) * factor
+		distance := distances[i%len(distances)] * factor
 		if unicode.IsLetter(char) {
 			ciphered = append(ciphered, getCipheredRune(char, distance))
 		}
